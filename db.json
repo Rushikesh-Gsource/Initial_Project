@@ -1,0 +1,30 @@
+{
+  "Users": [
+    {
+      "id": "b0df",
+      "email": "test123@gmail.com",
+      "password": "123456",
+      "name": "Rushi",
+      "title": "Creator"
+    },
+    {
+      "id": "6059",
+      "email": "ok@gmail.com",
+      "password": "123456",
+      "name": "Rushi",
+      "title": "Reader"
+    }
+  ],
+  "Blogs": [
+    {
+      "id": "1770202926986",
+      "title": "ok",
+      "body": "okokokok"
+    },
+    {
+      "id": "1770207996477",
+      "title": "ok",
+      "body": "ok ok ok k ok ok ok ok ok"
+    }
+  ]
+}
