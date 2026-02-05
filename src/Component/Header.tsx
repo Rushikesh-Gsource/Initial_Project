@@ -19,10 +19,10 @@ export default function Header() {
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
                 <div className="container-fluid">
-                    <Link className="navbar-brand d-flex align-items-center" to="/bloglist">
+                    <div className="navbar-brand d-flex align-items-center" >
                         <img src={logo} alt="logo" width="40" height="40" className="me-2" />
                         <span className="fw-bold">BlogApp</span>
-                    </Link>
+                    </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -54,6 +54,6 @@ export default function Header() {
                     </div>
                 </div>
             </nav>
-        </header>
+        </header >
     )
 }

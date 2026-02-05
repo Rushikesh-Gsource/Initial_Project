@@ -42,12 +42,39 @@ export default function Body() {
 
     return (
         <>
-            <div>
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required placeholder="Title" />
-                <textarea className="form-control form-control-lg" value={body} onChange={(e) => setBody(e.target.value)} required placeholder="Body" />
+            <div className="container py-5">
+                <h2 className="text-center mb-4">Create Blog</h2>
 
-                <button onClick={handleAddBlog}>Add Blog</button>
+                <div className="row justify-content-center">
+                    <div className="col-12 col-md-8 col-lg-7">
+
+                        <input
+                            type="text"
+                            className="form-control form-control-lg mb-3"
+                            placeholder="Blog title"
+                            value={title} onChange={(e) => setTitle(e.target.value)}
+                            required
+                        />
+
+                        <textarea
+                            className="form-control"
+                            rows={12}
+                            value={body}
+                            onChange={(e) => {
+                                setBody(e.target.value);
+                                e.currentTarget.style.height = "auto";
+                                e.currentTarget.style.height = e.currentTarget.scrollHeight + "px";
+                            }}
+                            placeholder="Write your blog here..."
+                        />
+                        <br />
+
+                        <button className="btn btn-outline-primary btn-lg" onClick={handleAddBlog}>Add Blog</button>
+
+                    </div>
+                </div>
             </div>
+
         </>
     )
 }
