@@ -2,6 +2,11 @@ import { useParams, useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 
 export default function BlogDetail() {
+    /**
+     * @description This component is used to display the details of a blog
+     * @returns {JSX.Element}
+     */
+
     const { id } = useParams()
     const navigate = useNavigate()
     const blogs = useSelector((state: any) => state.blog.blogs)

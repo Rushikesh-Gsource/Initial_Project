@@ -5,14 +5,25 @@ import { Link, useNavigate } from 'react-router-dom'
 import { setUser } from '../Store/Slices/blogSlice'
 import "./Header.css"
 
+/**
+ * @description This component is used to display the header
+ * @returns {JSX.Element}
+ */
 export default function Header() {
+    // user is used to store the user
     const user = useSelector((state: any) => state.blog.user)
+    // dispatch is used to send data here to the store
     const dispatch = useDispatch()
+    // navigate is used to navigate to the blog list page
     const navigate = useNavigate()
 
+    // handleLogout is used to logout the user
     const handleLogout = () => {
+        // remove user from local storage
         localStorage.removeItem("user")
+        // remove user from store
         dispatch(setUser(null))
+        // navigate to the login page
         navigate("/")
     }
 
@@ -28,6 +39,7 @@ export default function Header() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav me-auto nav-links">
+                            {/* ternary operator is used to display the links based on the user */}
                             {!user ? (
                                 <>
                                     <Link className="nav-link" to="/">Login</Link>
@@ -43,6 +55,7 @@ export default function Header() {
                                 </>
                             )}
                         </div>
+                        {/* if user is logged in, display the user name and logout button */}
                         {user && (
                             <div className="user-area">
                                 <span className="user-name">

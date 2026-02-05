@@ -4,19 +4,31 @@ import { updateBlog } from "../Store/Slices/blogSlice"
 import { useParams, useNavigate } from "react-router-dom"
 
 export default function EditBlog() {
+    /**
+     * @description This component is used to edit a blog
+     * @returns {JSX.Element}
+     */
+    // id is used to store the id of the blog
     const { id } = useParams()
+    // navigate is used to navigate to the blog list page
     const navigate = useNavigate()
+    // title is used to store the new title of the blog
     const [title, setTitle] = useState("")
+    // body is used to store the new body of the blog
     const [body, setBody] = useState("")
+    // name is used to store the new name of the blog
     const [name, setName] = useState("")
+    // dispatch is used to send data here to the store
     const dispatch = useDispatch()
+    // blogs is used to store the list of blogs
     const blogs = useSelector((state: any) => state.blog.blogs)
+    // handleUpdate is used to send the updated blog to the store
     const handleUpdate = () => {
         dispatch(updateBlog({ id, title, body, name }))
         navigate("/bloglist")
     }
 
-
+    // useEffect is used to fetch the blog
     useEffect(() => {
         const blog = blogs.find((blog: any) => blog.id === id)
         if (blog) {

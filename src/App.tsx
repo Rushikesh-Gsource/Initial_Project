@@ -19,20 +19,25 @@ import BlogDetail from './Component/BlogDetail'
 
 function App() {
   const dispatch = useDispatch()
-
+  /**
+   * @description This is the main component of the app
+   * @returns {JSX.Element}
+   */
   useEffect(() => {
+    // used to get the user from the local storage
     const savedUser = localStorage.getItem("user")
     if (savedUser) {
       dispatch(setUser(JSON.parse(savedUser)))
-
+      // used to fetch the blogs from the server and run once on user change
       axios.get("http://localhost:5000/Blogs").then((res) => {
+        // used to set the blogs
         dispatch(setBlogs(res.data));
       }).catch(err => console.error("Error fetching blogs:", err));
     }
   }, [dispatch])
 
   return (
-    <div >
+    <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Login />} />

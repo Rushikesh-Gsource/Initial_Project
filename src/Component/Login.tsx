@@ -6,9 +6,16 @@ import { setUser, setBlogs } from "../Store/Slices/blogSlice";
 import { Link } from "react-router-dom";
 
 export default function Login() {
+    /**
+     * @description This component is used to display the login page
+     * @returns {JSX.Element}
+     */
+    // navigate is used to navigate to the blog list page
     const navigate = useNavigate();
+    // dispatch is used to send data to the store
     const dispatch = useDispatch();
 
+    // fetchAllBlogs is used to fetch all the blogs from the server
     const fetchAllBlogs = async () => {
         try {
             const res = await axios.get("http://localhost:5000/Blogs");
@@ -18,18 +25,18 @@ export default function Login() {
         }
     }
 
+    // submitLogin is used to submit the login form
     const submitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const email = formData.get("email")?.toString().trim();
         const password = formData.get("password")?.toString().trim();
-
-
+        // if email or password is empty, show alert
         if (!email || !password) {
             alert("Please fill in all fields");
             return;
         }
-
+        // try to login
         try {
             const res = await axios.get(`http://localhost:5000/Users?email=${email}&password=${password}`);
             if (res.data.length > 0) {

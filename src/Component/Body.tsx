@@ -6,17 +6,26 @@ import { useNavigate } from "react-router-dom";
 
 export default function Body() {
 
+    /**
+     * @description This component is used to add a new blog
+     * @returns {JSX.Element}
+     */
 
+    // title is used to store the title of the blog
     const [title, setTitle] = useState("")
+    // body is used to store the body of the blog
     const [body, setBody] = useState("")
+    // name is used to store the name of the blog
     const [name, setName] = useState("")
+    // dispatch is used to send data here to the store
     const dispatch = useDispatch();
+    // navigate is used to navigate to the blog list page
     const navigate = useNavigate();
     const handleAddBlog = async () => {
         const trimmedTitle = title.trim();
         const trimmedBody = body.trim();
         const trimmedName = name.trim();
-
+        // here it is checking if the title and body are empty
         if (!trimmedTitle || !trimmedBody) {
             alert("Title and Body cannot be empty!");
             return;
@@ -27,11 +36,11 @@ export default function Body() {
             body: trimmedBody,
             name: trimmedName
         };
-
+        // fetch is used here to add the new blog to the server
         try {
             await axios.post("http://localhost:5000/Blogs", newBlog);
             dispatch(addBlog(newBlog));
-
+            // here it is clearing the form and navigating to the blog list page
             setTitle("");
             setBody("");
             alert("Blog added successfully!");

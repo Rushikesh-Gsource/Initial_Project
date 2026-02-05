@@ -5,16 +5,21 @@ import type { ChartData } from 'chart.js';
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-
+/**
+ * @description This component is used to display the dashboard
+ * @returns {JSX.Element}
+ */
 export default function Dashboard() {
+    // blogs is used to store the list of blogs
     const blogs = useSelector((state: any) => state.blog.blogs);
-
+    // totalBlogs is used to store the total number of blogs
     const totalBlogs = blogs.length;
+    // totalWords is used to store the total number of words
     const totalWords = blogs.reduce((acc: number, blog: any) => {
         const words = blog.body ? blog.body.trim().split(/\s+/).filter((w: string) => w.length > 0).length : 0;
         return acc + words;
     }, 0);
-
+    // data is used to store the data for the pie chart
     const data: ChartData<'pie'> = {
         labels: ['Total Blogs', 'Total Words'],
         datasets: [

@@ -2,21 +2,29 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
+    /**
+     * @description This component is used to display the signup page
+     * @returns {JSX.Element}
+     */
+    // navigate is used to navigate to the blog list page
     const navigate = useNavigate();
+    // submitSignup is used to submit the signup form
     const submitSignup = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        // get the form data and trim it and store it in variables
         const formData = new FormData(e.currentTarget);
         const email = formData.get("email")?.toString().trim();
         const password = formData.get("password")?.toString().trim();
         const name = formData.get("name")?.toString().trim();
         const title = formData.get("title")?.toString().trim();
-
+        // if email or password or any thing is empty, show alert
         if (!email || !password || !name || !title) {
             alert("Please fill in all fields");
             return;
         }
 
         try {
+            // try to signup
             await axios.post("http://localhost:5000/Users", {
                 email,
                 password,

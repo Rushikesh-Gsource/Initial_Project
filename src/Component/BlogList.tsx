@@ -3,21 +3,42 @@ import { deleteBlog as deleteBlogAction, updateBlog as updateBlogAction } from "
 import { useNavigate } from "react-router-dom"
 
 export default function BlogList() {
+    /**
+     * @description This component is used to display the list of blogs
+     * @returns {JSX.Element}
+     */
     const blogs = useSelector((state: any) => state.blog.blogs)
     const user = useSelector((state: any) => state.blog.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const handleDelete = (e: React.MouseEvent, id: any) => {
+        /**
+         * @description This function is used to delete a blog
+         * @param {React.MouseEvent} e
+         * @param {any} id
+         * @returns {void}
+         */
         e.stopPropagation()
         dispatch(deleteBlogAction(id))
     }
 
     const handleCardClick = (id: any) => {
+        /**
+         * @description This function is used to navigate to the blog details page
+         * @param {any} id
+         * @returns {void}
+         */
         navigate(`/blog/${id}`)
     }
 
     const handleUpdate = (e: React.MouseEvent, id: any) => {
+        /**
+         * @description This function is used to navigate to the edit blog page
+         * @param {React.MouseEvent} e
+         * @param {any} id
+         * @returns {void}
+         */
         e.stopPropagation()
         dispatch(updateBlogAction(id))
         navigate(`/edit-blog/${id}`)
@@ -41,6 +62,7 @@ export default function BlogList() {
                                 </p>
                                 <br />
                                 <div className="d-flex gap-2">
+                                    {/* ternary is used here inorder to show or hide the buttons based on the user role */}
                                     {user && user.title === "Creator" && (
                                         <button
                                             className="btn btn-outline-danger btn-sm mt-auto align-self-start"
@@ -49,6 +71,7 @@ export default function BlogList() {
                                             Delete
                                         </button>
                                     )}
+                                    {/* ternary is used here inorder to show or hide the buttons based on the user role */}
                                     {user && user.title === "Creator" && (
                                         <button
                                             className="btn btn-outline-primary btn-sm mt-auto align-self-start"
