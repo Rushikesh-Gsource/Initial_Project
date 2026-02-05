@@ -12,6 +12,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setUser, setBlogs } from './Store/Slices/blogSlice'
 import axios from 'axios'
+import EditBlog from './Component/Editblog'
 
 import ProtectedRoute from './Guards/ProtectedRoute'
 import BlogDetail from './Component/BlogDetail'
@@ -45,6 +46,7 @@ function App() {
         <Route element={<ProtectedRoute allowedTitles={['Creator']} />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/body" element={<Body />} />
+          <Route path="/edit-blog/:id" element={<EditBlog />} />
         </Route>
       </Routes>
     </div>

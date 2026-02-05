@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux"
-import { deleteBlog as deleteBlogAction } from "../Store/Slices/blogSlice"
+import { deleteBlog as deleteBlogAction, updateBlog as updateBlogAction } from "../Store/Slices/blogSlice"
 import { useNavigate } from "react-router-dom"
 
 export default function BlogList() {
@@ -15,6 +15,12 @@ export default function BlogList() {
 
     const handleCardClick = (id: any) => {
         navigate(`/blog/${id}`)
+    }
+
+    const handleUpdate = (e: React.MouseEvent, id: any) => {
+        e.stopPropagation()
+        dispatch(updateBlogAction(id))
+        navigate(`/edit-blog/${id}`)
     }
 
     return (
@@ -34,15 +40,24 @@ export default function BlogList() {
                                     {blog.body}
                                 </p>
                                 <br />
-
-                                {user && user.title === "Creator" && (
-                                    <button
-                                        className="btn btn-outline-danger btn-sm mt-auto align-self-start"
-                                        onClick={(e) => handleDelete(e, blog.id)}
-                                    >
-                                        Delete
-                                    </button>
-                                )}
+                                <div className="d-flex gap-2">
+                                    {user && user.title === "Creator" && (
+                                        <button
+                                            className="btn btn-outline-danger btn-sm mt-auto align-self-start"
+                                            onClick={(e) => handleDelete(e, blog.id)}
+                                        >
+                                            Delete
+                                        </button>
+                                    )}
+                                    {user && user.title === "Creator" && (
+                                        <button
+                                            className="btn btn-outline-primary btn-sm mt-auto align-self-start"
+                                            onClick={(e) => handleUpdate(e, blog.id)}
+                                        >
+                                            Update
+                                        </button>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>
