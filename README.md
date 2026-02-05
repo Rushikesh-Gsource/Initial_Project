@@ -6,15 +6,13 @@ A comprehensive blog management system built with React, Redux Toolkit, and Boot
 
 ## 1. Overview
 - **App Name**: Blogger
-- **Purpose**: To provide a seamless platform for content creators to draft, publish, and analyze their blogs while offering readers an intuitive interface to discover content.
-- **Problem it Solves**: Simplifies content management for individuals who need a lightweight, responsive blog platform without the overhead of complex CMS systems.
-- **Target Users**: Independent writers, students, and readers interested in community-driven content.
+- **Purpose**: To provide a seamless platform  to draft, publish their blogs while offering readers an intuitive interface to discover content.
+ It Simplifies content management for individuals who need a lightweight, responsive blog platform.
 - **Key Features**:
   *   Role-based access (Creator vs. Reader)
   *   Full CRUD operations on blogs
   *   Interactive Data Dashboard (Metrics visualization)
   *   Secure Route Guarding
-  *   Persistent User Sessions (localStorage)
 - **Tech Stack**:
   *   **Frontend**: React 19, TypeScript, Vite
   *   **State Management**: Redux Toolkit
@@ -60,7 +58,7 @@ The backend will run at `http://localhost:5000` using `db.json` as the database.
 ---
 
 ## 3. Project Structure
-```text
+```
 blogger-app/
 ├── public/                 # Static assets
 ├── src/
