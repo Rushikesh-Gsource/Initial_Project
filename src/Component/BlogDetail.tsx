@@ -18,10 +18,10 @@ export default function BlogDetail() {
 
     return (
         <div className="container mt-5">
-            <button className="btn btn-secondary mb-3" onClick={() => navigate(-1)}>Back</button>
             <h1>{blog.title}</h1>
             <hr />
             <p>{blog.body}</p>
+            <button className="btn btn-secondary mb-3" onClick={() => navigate(-1)}>Back</button>
         </div>
     )
 }

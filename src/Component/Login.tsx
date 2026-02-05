@@ -37,7 +37,7 @@ export default function Login() {
                 dispatch(setUser(user));
                 localStorage.setItem("user", JSON.stringify(user));
 
-                // Fetch blogs immediately after login
+
                 await fetchAllBlogs();
 
                 navigate("/body");
@@ -51,23 +51,24 @@ export default function Login() {
     };
     return (
         <>
-            <div className="container">
-                <div className="row">
+            <div className="container py-5">
+                <div className="row justify-content-center">
                     <div className="col-md-6">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">Login</h5>
+                                <h3 className="text-center mb-4">Login</h3>
                                 <form onSubmit={submitLogin}>
                                     <div className="mb-3">
-                                        <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                                        <input name="email" type="email" className="form-control" required />
+                                        <label className="form-label">Email address</label>
+                                        <input name="email" type="email" className="form-control form-control-lg mb-3" required />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                        <input name="password" type="password" className="form-control" required />
+                                        <label className="form-label">Password</label>
+                                        <input name="password" type="password" className="form-control form-control-lg mb-3" required />
                                     </div>
-                                    <button type="submit" className="btn btn-primary">Login</button>
+                                    <button type="submit" className="btn btn-outline-primary btn-lg">Login</button>
                                 </form>
+                                <br />
                                 <Link to="/signup">Not signed up? Signup Now</Link>
                             </div>
                         </div>

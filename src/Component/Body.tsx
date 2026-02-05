@@ -9,11 +9,13 @@ export default function Body() {
 
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
+    const [name, setName] = useState("")
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleAddBlog = async () => {
         const trimmedTitle = title.trim();
         const trimmedBody = body.trim();
+        const trimmedName = name.trim();
 
         if (!trimmedTitle || !trimmedBody) {
             alert("Title and Body cannot be empty!");
@@ -21,9 +23,9 @@ export default function Body() {
         }
 
         const newBlog = {
-            id: Date.now().toString(),
             title: trimmedTitle,
-            body: trimmedBody
+            body: trimmedBody,
+            name: trimmedName
         };
 
         try {
@@ -57,7 +59,7 @@ export default function Body() {
                         />
 
                         <textarea
-                            className="form-control"
+                            className="form-control form-control-lg mb-3"
                             rows={12}
                             value={body}
                             onChange={(e) => {
@@ -67,6 +69,8 @@ export default function Body() {
                             }}
                             placeholder="Write your blog here..."
                         />
+                        <br />
+                        <input className="form-control form-control-lg mb-3" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Author" />
                         <br />
 
                         <button className="btn btn-outline-primary btn-lg" onClick={handleAddBlog}>Add Blog</button>

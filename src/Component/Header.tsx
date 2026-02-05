@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import logo from '../assets/logo.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { setUser } from '../Store/Slices/blogSlice'
+import "./Header.css"
 
 export default function Header() {
     const user = useSelector((state: any) => state.blog.user)
@@ -17,21 +18,20 @@ export default function Header() {
 
     return (
         <header>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-                <div className="container-fluid">
-                    <div className="navbar-brand d-flex align-items-center" >
-                        <img src={logo} alt="logo" width="40" height="40" className="me-2" />
-                        <span className="fw-bold">BlogApp</span>
+            <nav className="navbar navbar-expand-lg app-navbar sticky-top">
+                <div className="container-fluid px-4">
+                    <div className="navbar-brand d-flex align-items-center brand" >
+                        <img src={logo} alt="logo" className="brand-logo" />
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-                        <span className="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon"> </span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav me-auto">
+                        <div className="navbar-nav me-auto nav-links">
                             {!user ? (
                                 <>
                                     <Link className="nav-link" to="/">Login</Link>
-                                    <Link className="nav-link" to="/signup">Signup</Link>
+
                                 </>
                             ) : (
                                 <>
@@ -44,8 +44,8 @@ export default function Header() {
                             )}
                         </div>
                         {user && (
-                            <div className="d-flex align-items-center">
-                                <span className="navbar-text me-3">
+                            <div className="user-area">
+                                <span className="user-name">
                                     Hello,{user.name}
                                 </span>
                                 <button className="btn btn-outline-danger btn-sm" onClick={handleLogout}>Logout</button>

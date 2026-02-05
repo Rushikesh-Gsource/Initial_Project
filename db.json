@@ -13,23 +13,14 @@
       "password": "123456",
       "name": "Rushi",
       "title": "Reader"
+    },
+    {
+      "id": "8fd1",
+      "email": "testing@gmail.com",
+      "password": "123456",
+      "name": "Rushi",
+      "title": "Reader"
     }
   ],
-  "Blogs": [
-    {
-      "id": "1770202926986",
-      "title": "ok",
-      "body": "okokokok"
-    },
-    {
-      "id": "1770207996477",
-      "title": "ok",
-      "body": "ok ok ok k ok ok ok ok ok"
-    },
-    {
-      "id": "1770274293358",
-      "title": "Your Own BLog",
-      "body": "okokok\nokmslkadnjsab,jsa\nsnkjsabdhbaskdjbas\nlckansnaksjn"
-    }
-  ]
+  "Blogs": []
 }

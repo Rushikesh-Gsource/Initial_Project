@@ -14,6 +14,7 @@ import { setUser, setBlogs } from './Store/Slices/blogSlice'
 import axios from 'axios'
 
 import ProtectedRoute from './Guards/ProtectedRoute'
+import BlogDetail from './Component/BlogDetail'
 
 function App() {
   const dispatch = useDispatch()
@@ -38,6 +39,7 @@ function App() {
 
         <Route element={<ProtectedRoute />}>
           <Route path="/bloglist" element={<BlogList />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
         </Route>
 
         <Route element={<ProtectedRoute allowedTitles={['Creator']} />}>

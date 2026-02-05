@@ -30,30 +30,30 @@ export default function Signup() {
     }
     return (
         <>
-            <div className="container">
-                <div className="row">
+            <div className="container py-5">
+                <div className="row justify-content-center">
                     <div className="col-md-6">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">Signup</h5>
+                                <h3 className="text-center mb-4">Signup</h3>
                                 <form onSubmit={submitSignup}>
                                     <div className="mb-3">
-                                        <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                                        <input name="email" type="email" className="form-control" required />
+                                        <label className="form-label">Email address</label>
+                                        <input name="email" type="email" className="form-control form-control-lg mb-3" required />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                        <input name="password" type="password" className="form-control" required />
+                                        <label className="form-label">Password</label>
+                                        <input name="password" type="password" className="form-control form-control-lg mb-3" required />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="exampleInputPassword1" className="form-label">Name</label>
-                                        <input name="name" type="text" className="form-control" required />
+                                        <label className="form-label">Name</label>
+                                        <input name="name" type="text" className="form-control form-control-lg mb-3" required />
                                     </div>
                                     <div className="mb-3">
-                                        <label htmlFor="exampleInputPassword1" className="form-label">Title</label>
-                                        <input name="title" type="text" className="form-control" placeholder="Creator/Reader" required />
+                                        <label className="form-label">Title</label>
+                                        <input name="title" type="text" className="form-control form-control-lg mb-3" placeholder="Creator/Reader" required />
                                     </div>
-                                    <button type="submit" className="btn btn-primary">Signup</button>
+                                    <button type="submit" className="btn btn-outline-primary btn-lg">Signup</button>
                                 </form>
                             </div>
                         </div>

@@ -1,0 +1,41 @@
+.app-navbar {
+    background: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.brand-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.brand-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #212529;
+    letter-spacing: 0.4px;
+}
+
+
+.nav-links .nav-link {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-right: 1rem;
+    color: #444;
+
+}
+
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-name {
+    font-weight: 500;
+    color: #333;
+}
