@@ -10,7 +10,7 @@ import Dashboard from './Component/Dashboard'
 
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { setUser, setBlogs } from './blogSlice'
+import { setUser, setBlogs } from './Store/Slices/blogSlice'
 import axios from 'axios'
 
 import ProtectedRoute from './Component/ProtectedRoute'

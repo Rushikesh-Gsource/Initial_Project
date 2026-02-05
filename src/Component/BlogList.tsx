@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux"
-import { deleteBlog as deleteBlogAction } from "../blogSlice"
+import { deleteBlog as deleteBlogAction } from "../Store/Slices/blogSlice"
 
 export default function BlogList() {
     const blogs = useSelector((state: any) => state.blog.blogs)

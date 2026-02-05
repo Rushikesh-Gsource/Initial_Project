@@ -2,7 +2,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import logo from '../assets/logo.png'
 import { Link, useNavigate } from 'react-router-dom'
-import { setUser } from '../blogSlice'
+import { setUser } from '../Store/Slices/blogSlice'
 
 export default function Header() {
     const user = useSelector((state: any) => state.blog.user)
