@@ -13,7 +13,7 @@ import { useDispatch } from 'react-redux'
 import { setUser, setBlogs } from './Store/Slices/blogSlice'
 import axios from 'axios'
 
-import ProtectedRoute from './Component/ProtectedRoute'
+import ProtectedRoute from './Guards/ProtectedRoute'
 
 function App() {
   const dispatch = useDispatch()
