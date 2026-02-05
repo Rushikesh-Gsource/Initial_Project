@@ -31,7 +31,7 @@ function App() {
   }, [dispatch])
 
   return (
-    <>
+    <div >
       <Header />
       <Routes>
         <Route path="/" element={<Login />} />
@@ -47,7 +47,7 @@ function App() {
           <Route path="/body" element={<Body />} />
         </Route>
       </Routes>
-    </>
+    </div>
   )
 }
 

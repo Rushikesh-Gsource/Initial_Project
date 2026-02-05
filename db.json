@@ -22,5 +22,12 @@
       "title": "Reader"
     }
   ],
-  "Blogs": []
+  "Blogs": [
+    {
+      "id": "f2c6",
+      "title": "Test Blog",
+      "body": "OK",
+      "name": "test"
+    }
+  ]
 }
