@@ -1,19 +1,19 @@
 
-import BlogList from './assets/Component/BlogList'
+import BlogList from './Component/BlogList'
 import './App.css'
-import Body from './assets/Component/Body'
+import Body from './Component/Body'
 import { Route, Routes } from 'react-router-dom'
-import Login from './assets/Component/Login'
-import Header from './assets/Component/Header'
-import Signup from './assets/Component/Signup'
-import Dashboard from './assets/Component/Dashboard'
+import Login from './Component/Login'
+import Header from './Component/Header'
+import Signup from './Component/Signup'
+import Dashboard from './Component/Dashboard'
 
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setUser, setBlogs } from './blogSlice'
 import axios from 'axios'
 
-import ProtectedRoute from './assets/Component/ProtectedRoute'
+import ProtectedRoute from './Component/ProtectedRoute'
 
 function App() {
   const dispatch = useDispatch()

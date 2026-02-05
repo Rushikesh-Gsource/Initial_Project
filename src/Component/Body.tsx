@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { addBlog } from "../../blogSlice"
+import { addBlog } from "../blogSlice"
 import { useState } from "react"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
