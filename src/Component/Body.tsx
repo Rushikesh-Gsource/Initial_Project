@@ -44,7 +44,7 @@ export default function Body() {
         <>
             <div>
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required placeholder="Title" />
-                <input type="text" value={body} onChange={(e) => setBody(e.target.value)} required placeholder="Body" />
+                <textarea className="form-control form-control-lg" value={body} onChange={(e) => setBody(e.target.value)} required placeholder="Body" />
 
                 <button onClick={handleAddBlog}>Add Blog</button>
             </div>
