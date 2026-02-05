@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { updateBlog } from "../Store/Slices/blogSlice"
 import { useParams, useNavigate } from "react-router-dom"
+import axios from "axios"
 
 export default function EditBlog() {
     /**
@@ -25,8 +26,10 @@ export default function EditBlog() {
     // handleUpdate is used to send the updated blog to the store
     const handleUpdate = () => {
         dispatch(updateBlog({ id, title, body, name }))
+        axios.put(`http://localhost:5000/Blogs/${id}`, { title, body, name })
         navigate("/bloglist")
     }
+
 
     // useEffect is used to fetch the blog
     useEffect(() => {
